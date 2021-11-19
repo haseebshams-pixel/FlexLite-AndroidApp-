@@ -3,10 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/cursor.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/custom_button.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/custom_input.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_key.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_user.xml" value="0.2085" />
         <entry key="app/src/main/res/layout-land/activity_start.xml" value="0.11276041666666667" />
+        <entry key="app/src/main/res/layout-land/activity_student.xml" value="0.18811950683593753" />
+        <entry key="app/src/main/res/layout-land/activity_student_login.xml" value="0.1604638619201726" />
+        <entry key="app/src/main/res/layout-land/activity_teacher_login.xml" value="0.22552083333333334" />
+        <entry key="app/src/main/res/layout-small/activity_student.xml" value="1.9233359085886101" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.15520833333333334" />
-        <entry key="app/src/main/res/layout/activity_student.xml" value="0.22059783935546884" />
+        <entry key="app/src/main/res/layout/activity_student.xml" value="0.246630859375" />
+        <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/activity_teacher_login.xml" value="0.19628286491387126" />
       </map>
     </option>
   </component>

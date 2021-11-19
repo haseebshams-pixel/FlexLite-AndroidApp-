@@ -12,6 +12,12 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        View myview1 =(View) findViewById(R.id.view);
+        myview1.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(StartActivity.this, TeacherLoginActivity.class));
+            }
+        });
         View myview =(View) findViewById(R.id.view2);
         myview.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
