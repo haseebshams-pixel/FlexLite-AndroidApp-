@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single" android:id="@+id/menu_grup1">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="HOME"
+            />
+        <item
+            android:id="@+id/nav_reg"
+            android:icon="@drawable/ic_registration"
+            android:title="REGISTRATION" />
+        <item
+            android:id="@+id/nav_drop"
+            android:icon="@drawable/ic_drop"
+            android:title="DROP" />
+        <item
+            android:id="@+id/nav_withdraw"
+            android:icon="@drawable/ic_withdraw"
+            android:title="WITHDRAW" />
+        <item
+            android:id="@+id/nav_marks"
+            android:icon="@drawable/ic_marks"
+            android:title="MARKS" />
+        <item
+            android:id="@+id/nav_attendance"
+            android:icon="@drawable/ic_attendance"
+            android:title="ATTENDANCE" />
+    </group>
+    <group android:checkableBehavior="single" android:id="@+id/menu_grup2">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="LOGOUT" />
+    </group>
+</menu>

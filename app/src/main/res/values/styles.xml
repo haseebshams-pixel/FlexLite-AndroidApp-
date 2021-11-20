@@ -6,5 +6,13 @@
 
         <!-- Defining that new color in ColorPrimaryDark -->
         <item name="colorPrimaryDark">@color/appBlue</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
+    </style>
+    <style name="NavigationView" parent="Base.Theme.AppCompat">
+        <item name="android:listDivider">@color/white</item>
+        <item name="colorPrimary">@color/appBlue</item>
+    </style>
+    <style name="menu_item_title_style">
+        <item name="fontFamily">@font/poppins_medium</item>
     </style>
 </resources>
