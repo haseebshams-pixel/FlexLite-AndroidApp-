@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.graphics.BitmapFactory;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,32 +16,28 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class StudentHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class TeacherHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageView menuIcon;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_home);
+        setContentView(R.layout.activity_teacher_home);
 
-        drawerLayout = (DrawerLayout) findViewById(R.id.stud_drawer);
-        navigationView = (NavigationView) findViewById(R.id.stud_nav);
+        drawerLayout = (DrawerLayout) findViewById(R.id.teach_drawer);
+        navigationView = (NavigationView) findViewById(R.id.teach_nav);
         menuIcon = (ImageView) findViewById(R.id.stud_menu_icon);
 
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = (TextView)headerView.findViewById(R.id.header_user_name);
         TextView navEmail=(TextView)headerView.findViewById(R.id.header_email);
-        navUsername.setText("Haseeb Shams");
-        navEmail.setText("hadishams38.hs@gmail.com");
+        navUsername.setText("Farooq Ahmed");
+        navEmail.setText("farooq.ahmed@gmail.com");
 
         navigationDrawer();
-
-
     }
-
     private void navigationDrawer() {
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
@@ -72,7 +69,7 @@ public class StudentHomeActivity extends AppCompatActivity implements Navigation
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.nav_attendance:
+            case R.id.nav_add_attendance:
                 Toast.makeText(this, "Attendance", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_logout:

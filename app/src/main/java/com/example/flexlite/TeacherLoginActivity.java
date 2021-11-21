@@ -24,7 +24,7 @@ public class TeacherLoginActivity extends AppCompatActivity {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TeacherLoginActivity.this, StudentHomeActivity.class));
+                startActivity(new Intent(TeacherLoginActivity.this, TeacherHomeActivity.class));
             }
         });
     }

@@ -21,18 +21,19 @@
 
 
     <TextView
+        android:id="@+id/header_user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Haseeb Shams"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/header_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
-        android:text="hadishams38.hs@gmail.com" />
+        />
 
 </LinearLayout>

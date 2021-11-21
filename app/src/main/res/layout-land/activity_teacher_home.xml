@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/stud_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbarAlwaysDrawVerticalTrack="true"
-    tools:context=".StudentHomeActivity">
-
+    android:id="@+id/teach_drawer"
+    tools:context=".TeacherHomeActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -321,7 +317,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.87" />
+                app:layout_constraintGuide_percent="0.83" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline111"
@@ -492,24 +488,11 @@
                 android:layout_height="0dp"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
-                android:text="Roll No:"
+                android:text="Salary:"
                 android:textColor="@color/black"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/guideline84"
                 app:layout_constraintStart_toStartOf="@+id/guideline88"
-                app:layout_constraintTop_toTopOf="@+id/guideline81" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:fontFamily="@font/poppins_medium"
-                android:gravity="center"
-                android:text="Batch:"
-                android:textColor="@color/black"
-                app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toTopOf="@+id/guideline84"
-                app:layout_constraintStart_toStartOf="@+id/guideline83"
                 app:layout_constraintTop_toTopOf="@+id/guideline81" />
 
             <TextView
@@ -543,7 +526,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:fontFamily="@font/poppins_light"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="BS(CS)"
                 android:textAllCaps="true"
                 app:autoSizeTextType="uniform"
@@ -558,8 +541,8 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:text="18L-1171"
+                android:gravity="center_vertical"
+                android:text="10000000"
                 android:textAllCaps="true"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/guideline84"
@@ -569,31 +552,17 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/textView16"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:text="2018"
-                app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toTopOf="@+id/guideline84"
-                app:layout_constraintEnd_toStartOf="@+id/guideline111"
-                app:layout_constraintStart_toStartOf="@+id/guideline90"
-                app:layout_constraintTop_toTopOf="@+id/guideline81"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
                 android:id="@+id/textView17"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:capitalize="words"
                 android:fontFamily="@font/poppins_light"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Lahore"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/guideline82"
                 app:layout_constraintEnd_toStartOf="@+id/guideline112"
-                app:layout_constraintStart_toStartOf="@+id/guideline87"
+                app:layout_constraintStart_toStartOf="@+id/guideline90"
                 app:layout_constraintTop_toTopOf="@+id/guideline85"
                 app:layout_constraintVertical_bias="0.0" />
 
@@ -693,8 +662,8 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:text="Haseeb Shams"
+                android:gravity="center_vertical"
+                android:text="Farooq Ahmed"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/guideline92"
                 app:layout_constraintEnd_toStartOf="@+id/guideline104"
@@ -706,7 +675,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:fontFamily="@font/poppins_light"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="34341-4349484-7"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/guideline94"
@@ -719,7 +688,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:fontFamily="@font/poppins_light"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="03/08/1999"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/guideline96"
@@ -732,8 +701,8 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:fontFamily="@font/poppins_light"
-                android:gravity="center"
-                android:text="hadishams38.hs@gmail.com"
+                android:gravity="center_vertical"
+                android:text="farooq.ahmed@gmail.com"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/guideline98"
                 app:layout_constraintEnd_toStartOf="@+id/guideline87"
@@ -745,12 +714,12 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:fontFamily="@font/poppins_light"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Male"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/guideline96"
                 app:layout_constraintEnd_toStartOf="@+id/guideline112"
-                app:layout_constraintStart_toStartOf="@+id/guideline87"
+                app:layout_constraintStart_toStartOf="@+id/guideline90"
                 app:layout_constraintTop_toTopOf="@+id/guideline95" />
 
             <TextView
@@ -758,12 +727,12 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:fontFamily="@font/poppins_light"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="0331 0062753"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/guideline100"
-                app:layout_constraintEnd_toStartOf="@+id/guideline108"
-                app:layout_constraintStart_toStartOf="@+id/guideline109"
+                app:layout_constraintEnd_toStartOf="@+id/guideline83"
+                app:layout_constraintStart_toStartOf="@+id/guideline86"
                 app:layout_constraintTop_toTopOf="@+id/guideline99"
                 app:layout_constraintVertical_bias="0.0" />
 
@@ -772,7 +741,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:fontFamily="@font/poppins_light"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="house #1, J Block Johr Town, Lahore Pakistan"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/guideline102"
@@ -784,7 +753,7 @@
     </ScrollView>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/stud_nav"
+        android:id="@+id/teach_nav"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
@@ -795,8 +764,5 @@
 
         app:itemTextAppearance="@style/menu_item_title_style"
 
-        app:menu="@menu/student_menu" />
-
-
+        app:menu="@menu/teacher_menu" />
 </androidx.drawerlayout.widget.DrawerLayout>
-
