@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,17 +15,18 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class TeacherHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+public class AddMarksActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageView menuIcon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_home);
+        setContentView(R.layout.activity_add_marks);
 
-        drawerLayout = (DrawerLayout) findViewById(R.id.teach_drawer);
+        drawerLayout = (DrawerLayout) findViewById(R.id.add_marks_drawer);
         navigationView = (NavigationView) findViewById(R.id.teach_nav);
         menuIcon = (ImageView) findViewById(R.id.stud_menu_icon);
 
@@ -42,7 +41,7 @@ public class TeacherHomeActivity extends AppCompatActivity implements Navigation
     private void navigationDrawer() {
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_home);
+        navigationView.setCheckedItem(R.id.nav_add_marks);
 
         menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +55,6 @@ public class TeacherHomeActivity extends AppCompatActivity implements Navigation
         });
 
     }
-
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
@@ -76,15 +74,13 @@ public class TeacherHomeActivity extends AppCompatActivity implements Navigation
                 break;
             case R.id.nav_add_marks:
                 drawerLayout.closeDrawers();
-                Intent intent = new Intent(TeacherHomeActivity.this,AddMarksActivity.class);
-                startActivity(intent);
                 break;
             case R.id.nav_home:
-                drawerLayout.closeDrawers();
-                break;
-            case R.id.nav_logout:
                 finish();
                 break;
+//            case R.id.nav_logout:
+//                finish();
+//                break;
         }
         return true;
     }
