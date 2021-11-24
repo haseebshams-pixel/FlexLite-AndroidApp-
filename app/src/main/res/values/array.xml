@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="assessmentType">
+        <item>Quiz</item>
+        <item>Assignment</item>
+        <item>Mid</item>
+        <item>Final</item>
+    </string-array>
+</resources>

@@ -7,15 +7,19 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class AddMarksActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class AddMarksActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -31,13 +35,14 @@ public class AddMarksActivity extends AppCompatActivity implements NavigationVie
         menuIcon = (ImageView) findViewById(R.id.stud_menu_icon);
 
         View headerView = navigationView.getHeaderView(0);
-        TextView navUsername = (TextView)headerView.findViewById(R.id.header_user_name);
-        TextView navEmail=(TextView)headerView.findViewById(R.id.header_email);
+        TextView navUsername = (TextView) headerView.findViewById(R.id.header_user_name);
+        TextView navEmail = (TextView) headerView.findViewById(R.id.header_email);
         navUsername.setText("Farooq Ahmed");
         navEmail.setText("farooq.ahmed@gmail.com");
 
         navigationDrawer();
     }
+
     private void navigationDrawer() {
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
@@ -54,7 +59,63 @@ public class AddMarksActivity extends AppCompatActivity implements NavigationVie
             }
         });
 
+        TableLayout table = (TableLayout) AddMarksActivity.this.findViewById(R.id.addmarkstable);
+
+        // Inflate your row "template" and fill out the fields.
+        TableRow row = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        ((TextView) row.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        ((EditText) row.findViewById(R.id.std_marks)).setText("10");
+        table.addView(row);
+        TableRow row2 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        ((TextView) row2.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        ((EditText) row2.findViewById(R.id.std_marks)).setText("10");
+        table.addView(row2);
+        TableRow row3 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        ((TextView) row3.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        ((EditText) row3.findViewById(R.id.std_marks)).setText("10");
+        table.addView(row3);
+        TableRow row4 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        ((TextView) row4.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        ((EditText) row4.findViewById(R.id.std_marks)).setText("10");
+        table.addView(row4);
+        TableRow row5 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        ((TextView) row5.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        ((EditText) row5.findViewById(R.id.std_marks)).setText("10");
+        table.addView(row5);
+        TableRow row6 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        ((TextView) row6.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        ((EditText) row6.findViewById(R.id.std_marks)).setText("10");
+        table.addView(row6);
+        TableRow row7 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        ((TextView) row7.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        ((EditText) row7.findViewById(R.id.std_marks)).setText("10");
+        table.addView(row7);
+        TableRow row8 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        ((TextView) row8.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        ((EditText) row8.findViewById(R.id.std_marks)).setText("10");
+        table.addView(row8);
+        TableRow row9 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        ((TextView) row9.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        ((EditText) row9.findViewById(R.id.std_marks)).setText("10");
+        table.addView(row9);
+        TableRow row11 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        ((TextView) row11.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        ((EditText) row11.findViewById(R.id.std_marks)).setText("10");
+        table.addView(row11);
+        TableRow row12 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        ((TextView) row12.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        ((EditText) row12.findViewById(R.id.std_marks)).setText("10");
+        table.addView(row12);
+        TableRow row13 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        ((TextView) row13.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        ((EditText) row13.findViewById(R.id.std_marks)).setText("10");
+        table.addView(row13);
+
+
+        table.requestLayout();
+
     }
+
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
@@ -67,7 +128,7 @@ public class AddMarksActivity extends AppCompatActivity implements NavigationVie
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_add_attendance:
                 Toast.makeText(this, "Attendance", Toast.LENGTH_SHORT).show();
                 drawerLayout.closeDrawers();

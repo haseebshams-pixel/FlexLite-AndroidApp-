@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.1789568345323741" />
         <entry key="app/src/main/res/drawable/cursor.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/custom_button.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/custom_input.xml" value="0.2085" />
@@ -30,17 +31,22 @@
         <entry key="app/src/main/res/layout-land/activity_student_login.xml" value="0.1604638619201726" />
         <entry key="app/src/main/res/layout-land/activity_teacher_home.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout-land/activity_teacher_login.xml" value="0.22552083333333334" />
+        <entry key="app/src/main/res/layout-small/activity_add_marks.xml" value="1.0294117647058822" />
         <entry key="app/src/main/res/layout-small/activity_student.xml" value="1.9233359085886101" />
         <entry key="app/src/main/res/layout-sw600dp/activity_student_home.xml" value="0.100067138671875" />
-        <entry key="app/src/main/res/layout/activity_add_marks.xml" value="0.31716604362480877" />
+        <entry key="app/src/main/res/layout/activity_add_marks.xml" value="0.4363143920898438" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/activity_stud_home.xml" value="0.2643446935271525" />
         <entry key="app/src/main/res/layout/activity_student.xml" value="0.246630859375" />
-        <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.2867630004882813" />
-        <entry key="app/src/main/res/layout/activity_student_login.xml" value="0.19628286491387126" />
-        <entry key="app/src/main/res/layout/activity_teacher_home.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.24903106689453125" />
+        <entry key="app/src/main/res/layout/activity_student_login.xml" value="0.4203078282927775" />
+        <entry key="app/src/main/res/layout/activity_teach_home.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/activity_teacher_home.xml" value="0.5628836369168931" />
         <entry key="app/src/main/res/layout/activity_teacher_login.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/add_marks_table.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/add_marks_table_row.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/app_bar_teacher_home.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/content_teacher_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.19628286491387126" />

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tableRow">
+    <TextView
+        android:id="@+id/stud_name"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:padding="4sp"
+        android:text="Haseeb Shams"
+        android:textColor="@color/black"
+         />
+
+    <EditText
+        android:id="@+id/std_marks"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4sp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/home_info_container"
+        android:ems="10"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:text="0"
+        android:textColor="@color/black" />
+</TableRow>
