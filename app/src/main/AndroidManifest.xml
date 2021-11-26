@@ -16,6 +16,10 @@
         android:theme="@style/Theme.FlexLite"
         tools:targetApi="31">
         <activity
+            android:name=".AddAttendanceActivity"
+            android:exported="false"
+            android:theme="@style/main" />
+        <activity
             android:name=".AddMarksActivity"
             android:exported="false"
             android:theme="@style/main" />

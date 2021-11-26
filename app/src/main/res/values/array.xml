@@ -6,4 +6,9 @@
         <item>Mid</item>
         <item>Final</item>
     </string-array>
+    <string-array name="attendance">
+        <item>-</item>
+        <item>P</item>
+        <item>A</item>
+    </string-array>
 </resources>

@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TableLayout;
@@ -19,18 +21,24 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class AddMarksActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
+public class AddAttendanceActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageView menuIcon;
+    EditText edittext;
+    Calendar myCalendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_marks);
+        setContentView(R.layout.activity_add_attendance);
 
-        drawerLayout = (DrawerLayout) findViewById(R.id.add_marks_drawer);
+        drawerLayout = (DrawerLayout) findViewById(R.id.add_attendance_drawer);
         navigationView = (NavigationView) findViewById(R.id.teach_nav);
         menuIcon = (ImageView) findViewById(R.id.stud_menu_icon);
 
@@ -41,12 +49,44 @@ public class AddMarksActivity extends AppCompatActivity implements NavigationVie
         navEmail.setText("farooq.ahmed@gmail.com");
 
         navigationDrawer();
-    }
+        myCalendar = Calendar.getInstance();
 
+        edittext= (EditText) findViewById(R.id.date);
+        DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, month);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel();
+            }
+
+
+        };
+
+        edittext.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(AddAttendanceActivity.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+    }
+    private void updateLabel() {
+        String myFormat = "MM/dd/yy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        edittext.setText(sdf.format(myCalendar.getTime()));
+    }
     private void navigationDrawer() {
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_add_marks);
+        navigationView.setCheckedItem(R.id.nav_add_attendance);
 
         menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,63 +99,49 @@ public class AddMarksActivity extends AppCompatActivity implements NavigationVie
             }
         });
 
-        TableLayout table = (TableLayout) AddMarksActivity.this.findViewById(R.id.addmarkstable);
+        TableLayout table = (TableLayout) AddAttendanceActivity.this.findViewById(R.id.addAttendacneTable);
 
         // Inflate your row "template" and fill out the fields.
-        TableRow row = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        TableRow row = (TableRow) LayoutInflater.from(AddAttendanceActivity.this).inflate(R.layout.add_attendance_table_row, null);
         ((TextView) row.findViewById(R.id.stud_name)).setText("Haseeb Shams");
-        ((EditText) row.findViewById(R.id.std_marks)).setText("10");
         table.addView(row);
-        TableRow row2 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        TableRow row2 = (TableRow) LayoutInflater.from(AddAttendanceActivity.this).inflate(R.layout.add_attendance_table_row, null);
         ((TextView) row2.findViewById(R.id.stud_name)).setText("Haseeb Shams");
-        ((EditText) row2.findViewById(R.id.std_marks)).setText("10");
         table.addView(row2);
-        TableRow row3 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        TableRow row3 = (TableRow) LayoutInflater.from(AddAttendanceActivity.this).inflate(R.layout.add_attendance_table_row, null);
         ((TextView) row3.findViewById(R.id.stud_name)).setText("Haseeb Shams");
-        ((EditText) row3.findViewById(R.id.std_marks)).setText("10");
         table.addView(row3);
-        TableRow row4 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        TableRow row4 = (TableRow) LayoutInflater.from(AddAttendanceActivity.this).inflate(R.layout.add_attendance_table_row, null);
         ((TextView) row4.findViewById(R.id.stud_name)).setText("Haseeb Shams");
-        ((EditText) row4.findViewById(R.id.std_marks)).setText("10");
         table.addView(row4);
-        TableRow row5 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        TableRow row5 = (TableRow) LayoutInflater.from(AddAttendanceActivity.this).inflate(R.layout.add_attendance_table_row, null);
         ((TextView) row5.findViewById(R.id.stud_name)).setText("Haseeb Shams");
-        ((EditText) row5.findViewById(R.id.std_marks)).setText("10");
         table.addView(row5);
-        TableRow row6 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        TableRow row6 = (TableRow) LayoutInflater.from(AddAttendanceActivity.this).inflate(R.layout.add_attendance_table_row, null);
         ((TextView) row6.findViewById(R.id.stud_name)).setText("Haseeb Shams");
-        ((EditText) row6.findViewById(R.id.std_marks)).setText("10");
         table.addView(row6);
-        TableRow row7 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        TableRow row7 = (TableRow) LayoutInflater.from(AddAttendanceActivity.this).inflate(R.layout.add_attendance_table_row, null);
         ((TextView) row7.findViewById(R.id.stud_name)).setText("Haseeb Shams");
-        ((EditText) row7.findViewById(R.id.std_marks)).setText("10");
         table.addView(row7);
-        TableRow row8 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        TableRow row8 = (TableRow) LayoutInflater.from(AddAttendanceActivity.this).inflate(R.layout.add_attendance_table_row, null);
         ((TextView) row8.findViewById(R.id.stud_name)).setText("Haseeb Shams");
-        ((EditText) row8.findViewById(R.id.std_marks)).setText("10");
         table.addView(row8);
-        TableRow row9 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        TableRow row9 = (TableRow) LayoutInflater.from(AddAttendanceActivity.this).inflate(R.layout.add_attendance_table_row, null);
         ((TextView) row9.findViewById(R.id.stud_name)).setText("Haseeb Shams");
-        ((EditText) row9.findViewById(R.id.std_marks)).setText("10");
         table.addView(row9);
-        TableRow row11 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
-        ((TextView) row11.findViewById(R.id.stud_name)).setText("Haseeb Shams");
-        ((EditText) row11.findViewById(R.id.std_marks)).setText("10");
-        table.addView(row11);
-        TableRow row12 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        TableRow row10 = (TableRow) LayoutInflater.from(AddAttendanceActivity.this).inflate(R.layout.add_attendance_table_row, null);
+        ((TextView) row10.findViewById(R.id.stud_name)).setText("Haseeb Shams");
+        table.addView(row10);
+        TableRow row12 = (TableRow) LayoutInflater.from(AddAttendanceActivity.this).inflate(R.layout.add_attendance_table_row, null);
         ((TextView) row12.findViewById(R.id.stud_name)).setText("Haseeb Shams");
-        ((EditText) row12.findViewById(R.id.std_marks)).setText("10");
         table.addView(row12);
-        TableRow row13 = (TableRow) LayoutInflater.from(AddMarksActivity.this).inflate(R.layout.add_marks_table_row, null);
+        TableRow row13 = (TableRow) LayoutInflater.from(AddAttendanceActivity.this).inflate(R.layout.add_attendance_table_row, null);
         ((TextView) row13.findViewById(R.id.stud_name)).setText("Haseeb Shams");
-        ((EditText) row13.findViewById(R.id.std_marks)).setText("10");
         table.addView(row13);
-
 
         table.requestLayout();
 
     }
-
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
@@ -125,25 +151,27 @@ public class AddMarksActivity extends AppCompatActivity implements NavigationVie
         }
 
     }
+
     @Override
     protected void onResume() {
         super.onResume();
-        navigationView.setCheckedItem(R.id.nav_add_marks);
+        navigationView.setCheckedItem(R.id.nav_add_attendance);
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_add_attendance:
-                Intent intent = new Intent(AddMarksActivity.this,AddAttendanceActivity.class);
-                startActivity(intent);
                 drawerLayout.closeDrawers();
                 break;
             case R.id.nav_add_marks:
+                Intent intent = new Intent(AddAttendanceActivity.this,AddMarksActivity.class);
+                startActivity(intent);
                 drawerLayout.closeDrawers();
                 break;
             case R.id.nav_home:
-                Intent intent2 = new Intent(AddMarksActivity.this,TeacherHomeActivity.class);
+                drawerLayout.closeDrawers();
+                Intent intent2 = new Intent(AddAttendanceActivity.this,TeacherHomeActivity.class);
                 startActivity(intent2);
                 break;
 //            case R.id.nav_logout:

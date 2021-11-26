@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -61,29 +62,37 @@ public class TeacherHomeActivity extends AppCompatActivity implements Navigation
     public void onBackPressed() {
         if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
         }
 
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        navigationView.setCheckedItem(R.id.nav_home);
+    }
+
+
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_add_attendance:
-                Toast.makeText(this, "Attendance", Toast.LENGTH_SHORT).show();
                 drawerLayout.closeDrawers();
+                Intent intent = new Intent(TeacherHomeActivity.this,AddAttendanceActivity.class);
+                startActivity(intent);
                 break;
             case R.id.nav_add_marks:
                 drawerLayout.closeDrawers();
-                Intent intent = new Intent(TeacherHomeActivity.this,AddMarksActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(TeacherHomeActivity.this,AddMarksActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.nav_home:
                 drawerLayout.closeDrawers();
                 break;
             case R.id.nav_logout:
-                finish();
+                drawerLayout.closeDrawers();
+                Intent intent3 = new Intent(TeacherHomeActivity.this,TeacherLoginActivity.class);
+                startActivity(intent3);
                 break;
         }
         return true;

@@ -2,11 +2,11 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/add_marks_drawer"
+    android:id="@+id/add_attendance_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbarAlwaysDrawVerticalTrack="true"
-    tools:context=".AddMarksActivity">
+    tools:context=".AddAttendanceActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,27 +16,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="75dp"
-                android:layout_marginTop="110dp"
-                android:layout_marginEnd="40dp"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="@color/appBlue"
-                app:cardCornerRadius="5dp"
-                app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView22"
-                app:layout_constraintTop_toBottomOf="@+id/view3">
-
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:entries="@array/assessmentType" />
-            </androidx.cardview.widget.CardView>
 
             <View
                 android:id="@+id/view3"
@@ -53,10 +32,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.25" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.35" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline122"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline59"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -68,7 +61,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="13dp"
-                android:layout_marginEnd="74dp"
+                android:layout_marginEnd="45dp"
                 android:layout_marginBottom="13dp"
                 app:layout_constraintBottom_toBottomOf="@+id/view3"
                 app:layout_constraintEnd_toStartOf="@+id/guideline119"
@@ -87,7 +80,7 @@
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
-                android:text="ADD MARKS"
+                android:text="ADD ATTENDANCE"
                 android:textColor="@color/white"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="@+id/view3"
@@ -114,23 +107,6 @@
                 android:text="Section:"
                 android:textColor="@color/black"
                 app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toTopOf="@+id/textView22"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view3"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginStart="31dp"
-                android:layout_marginTop="110dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/poppins_medium"
-                android:gravity="center_vertical"
-                android:text="Assessment Type:"
-                android:textColor="@color/black"
-                app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/textView32"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view3" />
@@ -139,33 +115,35 @@
                 android:id="@+id/textView32"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_marginStart="75dp"
-                android:layout_marginTop="153dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="110dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_vertical"
-                android:text="Total Marks:"
+                android:text="Lecture No:"
                 android:textColor="@color/black"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/textView33"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view3" />
+                app:layout_constraintTop_toBottomOf="@+id/view3"
+                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 android:id="@+id/textView33"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_marginStart="79dp"
-                android:layout_marginTop="195dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="153dp"
                 android:layout_marginBottom="40dp"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_vertical"
-                android:text="Weightage:"
+                android:text="Date:"
                 android:textColor="@color/black"
                 app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toTopOf="@+id/addmarkstable"
+                app:layout_constraintBottom_toTopOf="@+id/addAttendacneTable"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view3" />
+                app:layout_constraintTop_toBottomOf="@+id/view3"
+                app:layout_constraintVertical_bias="0.0" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -177,7 +155,7 @@
                 android:layout_marginBottom="8dp"
                 android:backgroundTint="@color/appBlue"
                 app:cardCornerRadius="5dp"
-                app:layout_constraintBottom_toTopOf="@+id/cardView2"
+                app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView21"
                 app:layout_constraintTop_toBottomOf="@+id/view3">
@@ -193,45 +171,49 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="74dp"
-                android:layout_marginTop="153dp"
+                android:layout_marginTop="110dp"
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/home_info_container"
                 android:ems="10"
                 android:fontFamily="@font/poppins_light"
-                android:hint="total marks*"
+                android:gravity="center"
+                android:hint="lecture*"
                 android:inputType="numberDecimal"
-                android:padding="4sp"
-                app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal2"
+                app:layout_constraintBottom_toTopOf="@+id/date"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView32"
                 app:layout_constraintTop_toBottomOf="@+id/view3" />
 
             <EditText
-                android:id="@+id/editTextNumberDecimal2"
+                android:id="@+id/date"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="74dp"
-                android:layout_marginTop="195dp"
+                android:layout_marginTop="153dp"
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="40dp"
                 android:background="@drawable/home_info_container"
+                android:clickable="false"
+                android:cursorVisible="false"
                 android:ems="10"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:fontFamily="@font/poppins_light"
-                android:hint="weightage*"
+                android:gravity="center"
+                android:hint="date*"
                 android:inputType="numberDecimal"
-                android:padding="4sp"
-                app:layout_constraintBottom_toTopOf="@+id/addmarkstable"
+                app:layout_constraintBottom_toTopOf="@+id/addAttendacneTable"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView33"
-                app:layout_constraintTop_toBottomOf="@+id/view3" />
+                app:layout_constraintTop_toTopOf="@+id/guideline121" />
 
             <TableLayout
-                android:id="@+id/addmarkstable"
+                android:id="@+id/addAttendacneTable"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="270dp"
+                android:layout_marginTop="228dp"
                 android:layout_marginEnd="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -249,8 +231,7 @@
                         android:gravity="center"
                         android:padding="4sp"
                         android:text="Student Name"
-                        android:textColor="@color/white"
-                        />
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/col2"
@@ -260,7 +241,7 @@
                         android:autoSizeTextType="uniform"
                         android:fontFamily="@font/poppins_light"
                         android:gravity="center"
-                        android:text="Marks"
+                        android:text="Status"
                         android:textColor="@color/white" />
 
                 </TableRow>
@@ -272,10 +253,10 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="56dp"
                 android:background="@drawable/custom_button"
-                app:layout_constraintEnd_toStartOf="@+id/guideline122"
+                app:layout_constraintEnd_toStartOf="@+id/guideline59"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guideline119"
-                app:layout_constraintTop_toBottomOf="@+id/addmarkstable" />
+                app:layout_constraintStart_toStartOf="@+id/guideline60"
+                app:layout_constraintTop_toBottomOf="@+id/addAttendacneTable" />
 
             <TextView
                 android:id="@+id/textView38"
@@ -291,7 +272,7 @@
                 android:textColor="@color/white"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="@+id/view4"
-                app:layout_constraintEnd_toStartOf="@+id/guideline122"
+                app:layout_constraintEnd_toStartOf="@+id/guideline59"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/view4"
                 app:layout_constraintTop_toTopOf="@+id/view4" />
@@ -311,5 +292,5 @@
 
         app:itemTextAppearance="@style/menu_item_title_style"
 
-        app:menu="@menu/teacher_menu" />
+        app:menu="@menu/teacher_menu"/>
 </androidx.drawerlayout.widget.DrawerLayout>

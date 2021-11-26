@@ -1,6 +1,7 @@
 package com.example.flexlite;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ public class TeacherLoginActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                startActivity(new Intent(TeacherLoginActivity.this, StartActivity.class));
             }
         });
         View signIn = (View) this.findViewById(R.id.signin1);
@@ -27,5 +28,11 @@ public class TeacherLoginActivity extends AppCompatActivity {
                 startActivity(new Intent(TeacherLoginActivity.this, TeacherHomeActivity.class));
             }
         });
+
+
+    }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(TeacherLoginActivity.this, StartActivity.class));
     }
 }
