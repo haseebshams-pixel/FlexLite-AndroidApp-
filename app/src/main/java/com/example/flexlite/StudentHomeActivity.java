@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -44,7 +45,7 @@ public class StudentHomeActivity extends AppCompatActivity implements Navigation
     private void navigationDrawer() {
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_home);
+        navigationView.setCheckedItem(R.id.nav_stud_home);
 
         menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,8 +73,10 @@ public class StudentHomeActivity extends AppCompatActivity implements Navigation
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.nav_attendance:
-                Toast.makeText(this, "Attendance", Toast.LENGTH_SHORT).show();
+            case R.id.nav_reg:
+                drawerLayout.closeDrawers();
+                Intent intent = new Intent(StudentHomeActivity.this,RegistrationActivity.class);
+                startActivity(intent);
                 break;
             case R.id.nav_logout:
                 finish();

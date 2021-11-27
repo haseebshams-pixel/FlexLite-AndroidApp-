@@ -11,4 +11,10 @@
         <item>P</item>
         <item>A</item>
     </string-array>
+    <string-array name="sections">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+    </string-array>
 </resources>

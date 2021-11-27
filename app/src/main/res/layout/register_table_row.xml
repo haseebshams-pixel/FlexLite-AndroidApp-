@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/registerTableRow"
+    android:padding="4sp">
+
+    <TextView
+        android:id="@+id/courseName"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center_vertical"
+        android:padding="4sp"
+        android:text="Software Mobile Development"
+        android:textColor="@color/black" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4sp"
+        android:backgroundTint="@color/appBlue"
+        app:cardCornerRadius="5dp">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/attendanceSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/sections" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/reg_btn"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2sp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="Register!"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform" />
+
+
+
+</TableRow>
