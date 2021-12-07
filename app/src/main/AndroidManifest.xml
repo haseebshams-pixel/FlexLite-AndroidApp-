@@ -16,6 +16,10 @@
         android:theme="@style/Theme.FlexLite"
         tools:targetApi="31">
         <activity
+            android:name=".DropCourseActivity"
+            android:exported="false"
+            android:theme="@style/main"/>
+        <activity
             android:name=".RegistrationActivity"
             android:exported="false"
             android:theme="@style/main" />

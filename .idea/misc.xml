@@ -24,6 +24,7 @@
         <entry key="app/src/main/res/drawable/ic_user_pic.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/ic_withdraw.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.2085" />
+        <entry key="app/src/main/res/layout-land/activity_drop_course.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout-land/activity_registration.xml" value="0.1851218469431381" />
         <entry key="app/src/main/res/layout-land/activity_splash.xml" value="0.21296296296296297" />
         <entry key="app/src/main/res/layout-land/activity_start.xml" value="0.11276041666666667" />
@@ -37,6 +38,7 @@
         <entry key="app/src/main/res/layout-sw600dp/activity_student_home.xml" value="0.100067138671875" />
         <entry key="app/src/main/res/layout/activity_add_attendance.xml" value="0.4637452511575008" />
         <entry key="app/src/main/res/layout/activity_add_marks.xml" value="0.24501953125" />
+        <entry key="app/src/main/res/layout/activity_drop_course.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.4737261146496815" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19628286491387126" />
@@ -53,6 +55,7 @@
         <entry key="app/src/main/res/layout/add_marks_table_row.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/app_bar_teacher_home.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/content_teacher_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/drop_table_row.xml" value="0.41011352539062507" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.19628286491387126" />

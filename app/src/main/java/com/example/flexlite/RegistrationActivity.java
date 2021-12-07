@@ -220,6 +220,11 @@ public class RegistrationActivity extends AppCompatActivity implements Navigatio
                 Intent intent = new Intent(RegistrationActivity.this,StudentHomeActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.nav_drop:
+                drawerLayout.closeDrawers();
+                Intent intent2 = new Intent(RegistrationActivity.this,DropCourseActivity.class);
+                startActivity(intent2);
+                break;
 //            case R.id.nav_logout:
 //                finish();
 //                break;
