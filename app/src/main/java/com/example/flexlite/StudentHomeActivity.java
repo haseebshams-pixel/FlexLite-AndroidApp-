@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class StudentHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -30,6 +33,7 @@ public class StudentHomeActivity extends AppCompatActivity implements Navigation
         drawerLayout = (DrawerLayout) findViewById(R.id.stud_drawer);
         navigationView = (NavigationView) findViewById(R.id.stud_nav);
         menuIcon = (ImageView) findViewById(R.id.stud_menu_icon);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = (TextView)headerView.findViewById(R.id.header_user_name);
@@ -38,6 +42,7 @@ public class StudentHomeActivity extends AppCompatActivity implements Navigation
         navEmail.setText("hadishams38.hs@gmail.com");
 
         navigationDrawer();
+        Log.d("UID",user.getUid());
 
 
     }
@@ -98,6 +103,7 @@ public class StudentHomeActivity extends AppCompatActivity implements Navigation
                 break;
             case R.id.nav_logout:
                 drawerLayout.closeDrawers();
+                FirebaseAuth.getInstance().signOut();
                 Intent intent6 = new Intent(StudentHomeActivity.this,StudentLoginActivity.class);
                 startActivity(intent6);
                 break;

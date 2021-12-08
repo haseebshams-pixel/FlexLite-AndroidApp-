@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "447348803630",
+    "project_id": "flexlite-f163e",
+    "storage_bucket": "flexlite-f163e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447348803630:android:9f8fc2e77e7c98f24d37bf",
+        "android_client_info": {
+          "package_name": "com.example.flexlite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447348803630-5auco6mfn4n06u1h2jofduqgvmcb9a1s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_MZX_JEV_EW77y9yFaibzDSZZ7L6F7do"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447348803630-5auco6mfn4n06u1h2jofduqgvmcb9a1s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
