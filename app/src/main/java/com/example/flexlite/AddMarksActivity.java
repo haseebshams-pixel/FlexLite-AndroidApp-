@@ -146,9 +146,11 @@ public class AddMarksActivity extends AppCompatActivity implements NavigationVie
                 Intent intent2 = new Intent(AddMarksActivity.this,TeacherHomeActivity.class);
                 startActivity(intent2);
                 break;
-//            case R.id.nav_logout:
-//                finish();
-//                break;
+            case R.id.nav_logout:
+                drawerLayout.closeDrawers();
+                Intent intent3 = new Intent(AddMarksActivity.this,TeacherLoginActivity.class);
+                startActivity(intent3);
+                break;
         }
         return true;
     }

@@ -17,7 +17,7 @@
 
 
     <TextView
-        android:id="@+id/drop_btn"
+        android:id="@+id/btn"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="2sp"

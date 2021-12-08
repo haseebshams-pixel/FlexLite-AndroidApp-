@@ -17,11 +17,12 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class DropCourseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class DropCourseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageView menuIcon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,7 @@ public class DropCourseActivity extends AppCompatActivity implements NavigationV
 
         navigationDrawer();
     }
+
     private void navigationDrawer() {
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
@@ -59,9 +61,9 @@ public class DropCourseActivity extends AppCompatActivity implements NavigationV
         TableLayout table = (TableLayout) DropCourseActivity.this.findViewById(R.id.dropTable);
 
         // Inflate your row "template" and fill out the fields.
-        TableRow row = (TableRow) LayoutInflater.from(DropCourseActivity.this).inflate(R.layout.drop_table_row, null);
+        TableRow row = (TableRow) LayoutInflater.from(DropCourseActivity.this).inflate(R.layout.text_button_row, null);
         ((TextView) row.findViewById(R.id.courseName)).setText("Software Mobile Development");
-        TextView btn = (TextView)row.findViewById(R.id.drop_btn);
+        TextView btn = (TextView) row.findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,20 +98,37 @@ public class DropCourseActivity extends AppCompatActivity implements NavigationV
         switch (item.getItemId()) {
             case R.id.nav_reg:
                 drawerLayout.closeDrawers();
-                Intent intent2 = new Intent(DropCourseActivity.this,RegistrationActivity.class);
+                Intent intent2 = new Intent(DropCourseActivity.this, RegistrationActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.nav_stud_home:
                 drawerLayout.closeDrawers();
-                Intent intent = new Intent(DropCourseActivity.this,StudentHomeActivity.class);
+                Intent intent = new Intent(DropCourseActivity.this, StudentHomeActivity.class);
                 startActivity(intent);
                 break;
             case R.id.nav_drop:
                 drawerLayout.closeDrawers();
                 break;
-//            case R.id.nav_logout:
-//                finish();
-//                break;
+            case R.id.nav_withdraw:
+                drawerLayout.closeDrawers();
+                Intent intent3 = new Intent(DropCourseActivity.this, WithDrawCourseActivity.class);
+                startActivity(intent3);
+                break;
+            case R.id.nav_attendance:
+                drawerLayout.closeDrawers();
+                Intent intent4 = new Intent(DropCourseActivity.this, ViewAttendanceActivity.class);
+                startActivity(intent4);
+                break;
+            case R.id.nav_marks:
+                drawerLayout.closeDrawers();
+                Intent intent5 = new Intent(DropCourseActivity.this, ViewMarksActivity.class);
+                startActivity(intent5);
+                break;
+            case R.id.nav_logout:
+                drawerLayout.closeDrawers();
+                Intent intent6 = new Intent(DropCourseActivity.this, StudentLoginActivity.class);
+                startActivity(intent6);
+                break;
         }
         return true;
     }

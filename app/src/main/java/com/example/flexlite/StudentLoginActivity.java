@@ -17,7 +17,8 @@ public class StudentLoginActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                startActivity(new Intent(StudentLoginActivity.this, StartActivity.class));
+
             }
         });
         View signIn = (View) this.findViewById(R.id.signin1);
@@ -27,5 +28,9 @@ public class StudentLoginActivity extends AppCompatActivity {
                 startActivity(new Intent(StudentLoginActivity.this, StudentHomeActivity.class));
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(StudentLoginActivity.this, StartActivity.class));
     }
 }

@@ -25,7 +25,7 @@
         <entry key="app/src/main/res/drawable/ic_withdraw.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.2085" />
         <entry key="app/src/main/res/layout-land/activity_drop_course.xml" value="0.22552083333333334" />
-        <entry key="app/src/main/res/layout-land/activity_registration.xml" value="0.1851218469431381" />
+        <entry key="app/src/main/res/layout-land/activity_registration.xml" value="0.7169776208689194" />
         <entry key="app/src/main/res/layout-land/activity_splash.xml" value="0.21296296296296297" />
         <entry key="app/src/main/res/layout-land/activity_start.xml" value="0.11276041666666667" />
         <entry key="app/src/main/res/layout-land/activity_student.xml" value="0.18811950683593753" />
@@ -33,14 +33,17 @@
         <entry key="app/src/main/res/layout-land/activity_student_login.xml" value="0.1604638619201726" />
         <entry key="app/src/main/res/layout-land/activity_teacher_home.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout-land/activity_teacher_login.xml" value="0.22552083333333334" />
+        <entry key="app/src/main/res/layout-land/activity_view_attendance.xml" value="0.22552083333333334" />
+        <entry key="app/src/main/res/layout-land/activity_view_marks.xml" value="0.22552083333333334" />
+        <entry key="app/src/main/res/layout-land/activity_with_draw_course.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout-small/activity_add_marks.xml" value="1.0294117647058822" />
         <entry key="app/src/main/res/layout-small/activity_student.xml" value="1.9233359085886101" />
         <entry key="app/src/main/res/layout-sw600dp/activity_student_home.xml" value="0.100067138671875" />
         <entry key="app/src/main/res/layout/activity_add_attendance.xml" value="0.4637452511575008" />
-        <entry key="app/src/main/res/layout/activity_add_marks.xml" value="0.24501953125" />
+        <entry key="app/src/main/res/layout/activity_add_marks.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_drop_course.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
-        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.4737261146496815" />
+        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.3924802110817942" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_stud_home.xml" value="0.2643446935271525" />
@@ -48,8 +51,11 @@
         <entry key="app/src/main/res/layout/activity_student_home.xml" value="0.4335341466521525" />
         <entry key="app/src/main/res/layout/activity_student_login.xml" value="0.4203078282927775" />
         <entry key="app/src/main/res/layout/activity_teach_home.xml" value="0.19628286491387126" />
-        <entry key="app/src/main/res/layout/activity_teacher_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_teacher_home.xml" value="0.40510091911309" />
         <entry key="app/src/main/res/layout/activity_teacher_login.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/activity_view_attendance.xml" value="0.3090909090909091" />
+        <entry key="app/src/main/res/layout/activity_view_marks.xml" value="0.3911093449247056" />
+        <entry key="app/src/main/res/layout/activity_with_draw_course.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/add_attendance_table_row.xml" value="0.3615782750701213" />
         <entry key="app/src/main/res/layout/add_marks_table.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/add_marks_table_row.xml" value="0.19628286491387126" />
@@ -64,6 +70,8 @@
         <entry key="app/src/main/res/layout/nav_header_teacher_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/register_table_row.xml" value="0.4817813765182186" />
         <entry key="app/src/main/res/layout/student_menu_header.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/text_button_row.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/view_attendance_row.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.2543822146216332" />
         <entry key="app/src/main/res/menu/student_menu.xml" value="0.2543822146216332" />
         <entry key="app/src/main/res/menu/teacher_home.xml" value="0.2543822146216332" />

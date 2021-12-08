@@ -174,9 +174,11 @@ public class AddAttendanceActivity extends AppCompatActivity implements Navigati
                 Intent intent2 = new Intent(AddAttendanceActivity.this,TeacherHomeActivity.class);
                 startActivity(intent2);
                 break;
-//            case R.id.nav_logout:
-//                finish();
-//                break;
+            case R.id.nav_logout:
+                drawerLayout.closeDrawers();
+                Intent intent3 = new Intent(AddAttendanceActivity.this,TeacherLoginActivity.class);
+                startActivity(intent3);
+                break;
         }
         return true;
     }

@@ -64,7 +64,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/guideline71"
                 app:layout_constraintEnd_toStartOf="@+id/guideline74"
                 app:layout_constraintStart_toStartOf="@+id/guideline75"
-                app:layout_constraintTop_toTopOf="@+id/guideline68"
+                app:layout_constraintTop_toTopOf="@+id/guideline73"
                 app:srcCompat="@drawable/ic_hamburger"
                 app:tint="@color/white" />
 

@@ -2,17 +2,15 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/register_drawer"
+    android:id="@+id/view_addtendance_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbarAlwaysDrawVerticalTrack="true"
-    tools:context=".RegistrationActivity">
-
+    tools:context=".ViewAttendanceActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <View
             android:id="@+id/view3"
@@ -21,8 +19,10 @@
             android:background="@color/appBlue"
             app:layout_constraintBottom_toTopOf="@+id/guideline121"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline119"
@@ -32,11 +32,18 @@
             app:layout_constraintGuide_percent="0.3" />
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline86"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33" />
+
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline65"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.17" />
+            app:layout_constraintGuide_percent="0.15" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline66"
@@ -51,6 +58,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline89"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.84" />
 
         <ImageView
             android:id="@+id/stud_menu_icon"
@@ -69,7 +83,7 @@
             android:layout_height="0dp"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"
-            android:text="REGISTRATION"
+            android:text="ATTENDANCE"
             android:textColor="@color/white"
             app:autoSizeTextType="uniform"
             app:layout_constraintBottom_toTopOf="@+id/guideline61"
@@ -82,45 +96,68 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.09" />
+            app:layout_constraintGuide_percent="0.18" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline61"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.07" />
+            app:layout_constraintGuide_percent="0.15" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline63"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.08" />
+            app:layout_constraintGuide_percent="0.16" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline62"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.02" />
+            app:layout_constraintGuide_percent="0.03" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline64"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.01" />
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="80dp"
+            android:backgroundTint="@color/appBlue"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline86"
+            app:layout_constraintTop_toBottomOf="@+id/view3">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/coursesList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
 
         <ScrollView
+            android:id="@+id/scrollView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="180dp"
             android:fillViewport="true"
-            android:layout_marginTop="120dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view3">
 
             <TableLayout
-                android:id="@+id/registerTable"
+                android:id="@+id/ViewAttendanceTable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -136,31 +173,30 @@
                     <TextView
                         android:id="@+id/col1"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
+                        android:layout_weight="1"
                         android:autoSizeTextType="uniform"
                         android:fontFamily="@font/poppins_light"
-                        android:gravity="center_vertical"
-                        android:padding="4sp"
-                        android:text="Course"
+                        android:gravity="center"
+                        android:text="Lecture No"
                         android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/col2"
-                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="0dp"
+                        android:layout_weight="1"
                         android:autoSizeTextType="uniform"
                         android:fontFamily="@font/poppins_light"
                         android:gravity="center"
-                        android:text="Section"
+                        android:text="Date"
                         android:textColor="@color/white" />
 
 
                     <TextView
                         android:id="@+id/col3"
-                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="0dp"
+                        android:layout_weight="1"
                         android:autoSizeTextType="uniform"
                         android:fontFamily="@font/poppins_light"
                         android:gravity="center"
@@ -171,8 +207,22 @@
             </TableLayout>
         </ScrollView>
 
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="80dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="Subject:"
+            android:textColor="@color/black"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline86"
+            app:layout_constraintStart_toStartOf="@+id/guideline65"
+            app:layout_constraintTop_toTopOf="@+id/guideline121" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/stud_nav"
@@ -187,5 +237,4 @@
         app:itemTextAppearance="@style/menu_item_title_style"
 
         app:menu="@menu/student_menu" />
-
 </androidx.drawerlayout.widget.DrawerLayout>
