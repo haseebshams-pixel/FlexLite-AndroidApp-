@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/teach_drawer"
-    tools:context=".TeacherHomeActivity">
+    tools:context=".Activities.TeacherHomeActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbarAlwaysDrawVerticalTrack="true"
-    tools:context=".StudentHomeActivity">
+    tools:context=".Activities.StudentHomeActivity">
 
     <ScrollView
         android:layout_width="match_parent"

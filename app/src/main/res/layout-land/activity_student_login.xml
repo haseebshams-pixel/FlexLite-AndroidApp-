@@ -7,7 +7,7 @@
     android:layout_margin="0dp"
     android:padding="0dp"
     android:scrollbars="none"
-    tools:context=".StudentLoginActivity">
+    tools:context=".Activities.StudentLoginActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline22"

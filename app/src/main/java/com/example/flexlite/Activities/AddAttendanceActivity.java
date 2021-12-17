@@ -1,4 +1,4 @@
-package com.example.flexlite;
+package com.example.flexlite.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,8 +17,8 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.flexlite.R;
 import com.google.android.material.navigation.NavigationView;
 
 import java.text.SimpleDateFormat;

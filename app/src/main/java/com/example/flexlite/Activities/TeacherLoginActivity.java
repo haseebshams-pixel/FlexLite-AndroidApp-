@@ -1,12 +1,13 @@
-package com.example.flexlite;
+package com.example.flexlite.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.flexlite.R;
 
 public class TeacherLoginActivity extends AppCompatActivity {
 
