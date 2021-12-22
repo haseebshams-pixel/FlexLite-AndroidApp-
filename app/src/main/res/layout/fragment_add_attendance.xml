@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/add_attendance_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbarAlwaysDrawVerticalTrack="true"
-    tools:context=".Activities.AddAttendanceActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.addAttendance">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,100 +20,30 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@color/appBlue"
-                app:layout_constraintBottom_toTopOf="@+id/guideline121"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline119"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.25" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline80"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.17" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline81"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.03" />
-
-            <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline60"
+                app:layout_constraintGuide_percent="0.35"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.35" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline122"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.75" />
+                android:orientation="vertical" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline59"
+                app:layout_constraintGuide_percent="0.65"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.65" />
-
-            <ImageView
-                android:id="@+id/stud_menu_icon"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline78"
-                app:layout_constraintEnd_toStartOf="@+id/guideline80"
-                app:layout_constraintStart_toStartOf="@+id/guideline81"
-                app:layout_constraintTop_toTopOf="@+id/guideline79"
-                app:srcCompat="@drawable/ic_hamburger"
-                app:tint="@color/white" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/poppins_medium"
-                android:gravity="center"
-                android:text="ADD ATTENDANCE"
-                android:textColor="@color/white"
-                app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toBottomOf="@+id/view3"
-                app:layout_constraintEnd_toStartOf="@+id/guideline122"
-                app:layout_constraintStart_toStartOf="@+id/guideline119"
-                app:layout_constraintTop_toTopOf="@+id/view3" />
+                android:orientation="vertical" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline121"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.09" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline78"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.08" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline79"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.01" />
+                app:layout_constraintGuide_percent="0.0" />
 
             <TextView
                 android:id="@+id/textView21"
@@ -131,10 +59,15 @@
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/textView32"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view3" />
+                app:layout_constraintTop_toTopOf="@+id/guideline121" />
 
             <TextView
                 android:id="@+id/textView32"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toTopOf="@+id/textView33"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3"
+                app:layout_constraintVertical_bias="1.0"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="80dp"
@@ -143,15 +76,15 @@
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_vertical"
                 android:text="Lecture No:"
-                android:textColor="@color/black"
-                app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toTopOf="@+id/textView33"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view3"
-                app:layout_constraintVertical_bias="1.0" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/textView33"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toTopOf="@+id/addAttendacneTable"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3"
+                app:layout_constraintVertical_bias="0.0"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="120dp"
@@ -160,12 +93,7 @@
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_vertical"
                 android:text="Date:"
-                android:textColor="@color/black"
-                app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toTopOf="@+id/addAttendacneTable"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view3"
-                app:layout_constraintVertical_bias="0.0" />
+                android:textColor="@color/black" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -180,7 +108,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView21"
-                app:layout_constraintTop_toBottomOf="@+id/view3">
+                app:layout_constraintTop_toTopOf="@+id/guideline121">
 
                 <androidx.appcompat.widget.AppCompatSpinner
                     android:layout_width="match_parent"
@@ -190,6 +118,10 @@
 
             <EditText
                 android:id="@+id/editTextNumberDecimal"
+                app:layout_constraintBottom_toTopOf="@+id/date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView32"
+                app:layout_constraintTop_toBottomOf="@+id/view3"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="74dp"
@@ -201,14 +133,14 @@
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:hint="lecture*"
-                android:inputType="numberDecimal"
-                app:layout_constraintBottom_toTopOf="@+id/date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView32"
-                app:layout_constraintTop_toBottomOf="@+id/view3" />
+                android:inputType="numberDecimal" />
 
             <EditText
                 android:id="@+id/date"
+                app:layout_constraintBottom_toTopOf="@+id/addAttendacneTable"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView33"
+                app:layout_constraintTop_toTopOf="@+id/guideline121"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="74dp"
@@ -224,23 +156,19 @@
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:hint="date*"
-                android:inputType="numberDecimal"
-                app:layout_constraintBottom_toTopOf="@+id/addAttendacneTable"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView33"
-                app:layout_constraintTop_toTopOf="@+id/guideline121" />
+                android:inputType="numberDecimal" />
 
             <TableLayout
                 android:id="@+id/addAttendacneTable"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="228dp"
-                android:layout_marginEnd="40dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view3">
+                android:layout_marginEnd="40dp">
 
                 <TableRow android:background="@color/appBlue">
 
@@ -271,17 +199,23 @@
 
             <View
                 android:id="@+id/view4"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="56dp"
-                android:background="@drawable/custom_button"
                 app:layout_constraintEnd_toStartOf="@+id/guideline59"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline60"
-                app:layout_constraintTop_toBottomOf="@+id/addAttendacneTable" />
+                app:layout_constraintTop_toBottomOf="@+id/addAttendacneTable"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="56dp"
+                android:background="@drawable/custom_button" />
 
             <TextView
                 android:id="@+id/textView38"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="@+id/view4"
+                app:layout_constraintEnd_toStartOf="@+id/guideline59"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/view4"
+                app:layout_constraintTop_toTopOf="@+id/view4"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="19dp"
@@ -291,28 +225,9 @@
                 android:fontFamily="@font/poppins"
                 android:gravity="center"
                 android:text="Save"
-                android:textColor="@color/white"
-                app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toBottomOf="@+id/view4"
-                app:layout_constraintEnd_toStartOf="@+id/guideline59"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/view4"
-                app:layout_constraintTop_toTopOf="@+id/view4" />
+                android:textColor="@color/white" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/teach_nav"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@color/menugrey"
-        android:fitsSystemWindows="true"
-        android:theme="@style/NavigationView"
-        app:headerLayout="@layout/menu_header"
-
-        app:itemTextAppearance="@style/menu_item_title_style"
-
-        app:menu="@menu/teacher_menu"/>
-</androidx.drawerlayout.widget.DrawerLayout>
+</FrameLayout>

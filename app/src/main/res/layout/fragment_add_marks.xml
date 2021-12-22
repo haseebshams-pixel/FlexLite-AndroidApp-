@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/add_marks_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbarAlwaysDrawVerticalTrack="true"
-    tools:context=".Activities.AddMarksActivity">
+    tools:context=".Fragments.addMarks">
+
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,12 +42,10 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@color/appBlue"
-                app:layout_constraintBottom_toTopOf="@+id/guideline121"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline119"
@@ -78,53 +75,12 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.65" />
 
-            <ImageView
-                android:id="@+id/stud_menu_icon"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@+id/guideline82"
-                app:layout_constraintEnd_toStartOf="@+id/guideline84"
-                app:layout_constraintStart_toStartOf="@+id/guideline85"
-                app:layout_constraintTop_toTopOf="@+id/guideline83"
-                app:srcCompat="@drawable/ic_hamburger"
-                app:tint="@color/white" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/poppins_medium"
-                android:gravity="center"
-                android:text="ADD MARKS"
-                android:textColor="@color/white"
-                app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toBottomOf="@+id/view3"
-                app:layout_constraintEnd_toStartOf="@+id/guideline122"
-                app:layout_constraintStart_toStartOf="@+id/guideline119"
-                app:layout_constraintTop_toTopOf="@+id/view3" />
-
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline121"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.09" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline82"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.08" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline83"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.01" />
+                app:layout_constraintGuide_percent="0.0" />
 
             <TextView
                 android:id="@+id/textView21"
@@ -140,8 +96,7 @@
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toTopOf="@+id/textView22"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view3"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toTopOf="@+id/guideline121" />
 
             <TextView
                 android:id="@+id/textView22"
@@ -204,7 +159,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/cardView2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView21"
-                app:layout_constraintTop_toBottomOf="@+id/view3">
+                app:layout_constraintTop_toTopOf="@+id/guideline121">
 
                 <androidx.appcompat.widget.AppCompatSpinner
                     android:layout_width="match_parent"
@@ -273,8 +228,7 @@
                         android:gravity="center"
                         android:padding="4sp"
                         android:text="Student Name"
-                        android:textColor="@color/white"
-                        />
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/col2"
@@ -323,17 +277,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/teach_nav"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@color/menugrey"
-        android:fitsSystemWindows="true"
-        android:theme="@style/NavigationView"
-        app:headerLayout="@layout/menu_header"
 
-        app:itemTextAppearance="@style/menu_item_title_style"
-
-        app:menu="@menu/teacher_menu" />
-</androidx.drawerlayout.widget.DrawerLayout>
+</FrameLayout>
