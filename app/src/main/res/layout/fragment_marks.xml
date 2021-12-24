@@ -22,21 +22,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.33" />
+            app:layout_constraintGuide_percent="0.28" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline92"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintGuide_percent="0.49" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline65"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.15" />
+            app:layout_constraintGuide_percent="0.1" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline122"
@@ -71,14 +71,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.14" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline62"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.15" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="45dp"
             android:backgroundTint="@color/appBlue"
             app:cardCornerRadius="5dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline88"
@@ -97,7 +104,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="30dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginEnd="45dp"
             android:backgroundTint="@color/appBlue"
             app:cardCornerRadius="5dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline91"
@@ -106,6 +113,7 @@
             app:layout_constraintTop_toTopOf="@+id/guideline90">
 
             <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/assessmentList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:entries="@array/assessmentType" />
@@ -194,7 +202,7 @@
             android:text="Assessment Type:"
             android:textColor="@color/black"
             app:autoSizeTextType="uniform"
-            app:layout_constraintBottom_toTopOf="@+id/guideline91"
+            app:layout_constraintBottom_toTopOf="@+id/guideline62"
             app:layout_constraintEnd_toStartOf="@+id/guideline92"
             app:layout_constraintStart_toStartOf="@+id/guideline65"
             app:layout_constraintTop_toTopOf="@+id/guideline90" />

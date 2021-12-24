@@ -1,33 +1,36 @@
 package com.example.flexlite.Classes;
 
+import com.example.flexlite.Firebase.IFlexLiteDAO;
+
 import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.UUID;
 
 public class Department {
-    private int id;
+    private String id;
     private String name;
-    private boolean isRegOpen;
-    private boolean isWithdrawOpen;
-    private Admin admin;
-    private ArrayList<Student> StudentList;
-    private ArrayList<Teacher> TeacherList;
-    private ArrayList<Course> CourseList;
+    private String isRegOpen;
+    private String isWithdrawOpen;
+    private String admin;
+    private IFlexLiteDAO dao;
 
-    public Department(int id, String name, boolean isRegOpen, boolean isWithdrawOpen, Admin admin) {
-        this.id = id;
+    public Department(String name, String isRegOpen, String isWithdrawOpen, String admin) {
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.isRegOpen = isRegOpen;
         this.isWithdrawOpen = isWithdrawOpen;
         this.admin = admin;
-        this.StudentList = new ArrayList<Student>();
-        this.TeacherList = new ArrayList<Teacher>();
-        this.CourseList = new ArrayList<Course>();
     }
 
-    public int getId() {
+    public Department(IFlexLiteDAO dao) {
+        this.dao = dao;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -39,51 +42,56 @@ public class Department {
         this.name = name;
     }
 
-    public boolean isRegOpen() {
+    public String getIsRegOpen() {
         return isRegOpen;
     }
 
-    public void setRegOpen(boolean regOpen) {
-        isRegOpen = regOpen;
+    public void setIsRegOpen(String isRegOpen) {
+        this.isRegOpen = isRegOpen;
     }
 
-    public boolean isWithdrawOpen() {
+    public String getIsWithdrawOpen() {
         return isWithdrawOpen;
     }
 
-    public void setWithdrawOpen(boolean withdrawOpen) {
-        isWithdrawOpen = withdrawOpen;
+    public void setIsWithdrawOpen(String isWithdrawOpen) {
+        this.isWithdrawOpen = isWithdrawOpen;
     }
 
-    public Admin getAdmin() {
+    public String getAdmin() {
         return admin;
     }
 
-    public void setAdmin(Admin admin) {
+    public void setAdmin(String admin) {
         this.admin = admin;
     }
 
-    public ArrayList<Student> getStudentList() {
-        return StudentList;
+    public IFlexLiteDAO getDao() {
+        return dao;
     }
 
-    public void setStudentList(ArrayList<Student> studentList) {
-        StudentList = studentList;
+    public void setDao(IFlexLiteDAO dao) {
+        this.dao = dao;
     }
 
-    public ArrayList<Teacher> getTeacherList() {
-        return TeacherList;
+    public void load(Hashtable<String, String> data) {
+        this.id = data.get("id");
+        this.admin = data.get("adminid");
+        this.isRegOpen = data.get("isRegOpen");
+        this.isWithdrawOpen = data.get("isWithdrawOpen");
+        this.name = data.get("name");
     }
 
-    public void setTeacherList(ArrayList<Teacher> teacherList) {
-        TeacherList = teacherList;
-    }
-
-    public ArrayList<Course> getCourseList() {
-        return CourseList;
-    }
-
-    public void setCourseList(ArrayList<Course> courseList) {
-        CourseList = courseList;
+    public static ArrayList<Department> load(IFlexLiteDAO dao) {
+        ArrayList<Department> notes = new ArrayList<Department>();
+        if (dao != null) {
+            ArrayList<Hashtable<String, String>> objects = dao.load();
+            for (Hashtable<String, String> obj : objects) {
+                Department donor = new Department(dao);
+                donor.load(obj);
+                notes.add(donor);
+            }
+        }
+        return notes;
     }
 }

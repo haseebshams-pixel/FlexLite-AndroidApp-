@@ -13,6 +13,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.flexlite.Classes.Student;
+import com.example.flexlite.Firebase.FirebaseDAO;
+import com.example.flexlite.Firebase.IFlexLiteDAO;
 import com.example.flexlite.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,6 +28,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class StudentLoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    IFlexLiteDAO dao;
     EditText email;
     TextInputEditText password;
     @Override
@@ -35,6 +39,7 @@ public class StudentLoginActivity extends AppCompatActivity {
         ImageView backButton = (ImageView) this.findViewById(R.id.back1);
         email = (EditText) findViewById(R.id.studUsername);
         password = (TextInputEditText) findViewById(R.id.password);
+        dao = new FirebaseDAO("student");
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,11 +100,24 @@ public class StudentLoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            String id = mAuth.getUid().toString();
+                            dao = new FirebaseDAO(new FirebaseDAO.DataObserver() {
+                                @Override
+                                public void update() {
+                                    Student std = Student.load(dao,id);
+                                    if(std!=null){
+                                        updateUI(user);
+                                    }else{
+                                        mAuth.signOut();
+                                        Toast.makeText(StudentLoginActivity.this, "User not found",Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            },"student");
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(StudentLoginActivity.this, "Authentication failed.",
+                            Toast.makeText(StudentLoginActivity.this, "incorrect Credentials",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }

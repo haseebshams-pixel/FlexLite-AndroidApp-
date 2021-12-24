@@ -1,54 +1,69 @@
 package com.example.flexlite.Classes;
 
+import android.util.Log;
+
+import com.example.flexlite.Firebase.IFlexLiteDAO;
+
 import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.UUID;
 
 public class Registration {
-    private int RegId;
-    private String Status;
-    private Student Stud;
-    private Section Sec;
+    private String id;
+    private String status;
+    private String StudId;
+    private String sectionId;
+    private IFlexLiteDAO dao;
     private ArrayList<Assessment> AssessmentList;
     private ArrayList<Attendance> AttendanceList;
 
-    public Registration(int regId, String status, Student stud, Section sec) {
-        RegId = regId;
-        Status = status;
-        Stud = stud;
-        Sec = sec;
+    public Registration(String status, String stud, String sec) {
+        this.id = UUID.randomUUID().toString();
+        this.status = status;
+        StudId = stud;
+        sectionId = sec;
         this.AssessmentList = new ArrayList<Assessment>();
         this.AttendanceList = new ArrayList<Attendance>();
     }
 
-    public int getRegId() {
-        return RegId;
+    public void setDao(IFlexLiteDAO dao) {
+        this.dao = dao;
     }
 
-    public void setRegId(int regId) {
-        RegId = regId;
+    public Registration(IFlexLiteDAO dao) {
+       this.dao = dao;
     }
 
-    public String getStatus() {
-        return Status;
+    public String getid() {
+        return id;
     }
 
-    public void setStatus(String status) {
-        Status = status;
+    public void setid(String id) {
+        id = id;
     }
 
-    public Student getStud() {
-        return Stud;
+    public String getstatus() {
+        return status;
     }
 
-    public void setStud(Student stud) {
-        Stud = stud;
+    public void setstatus(String status) {
+        this.status = status;
     }
 
-    public Section getSec() {
-        return Sec;
+    public String getStud() {
+        return StudId;
     }
 
-    public void setSec(Section sec) {
-        Sec = sec;
+    public void setStud(String stud) {
+        StudId = stud;
+    }
+
+    public String getSec() {
+        return sectionId;
+    }
+
+    public void setSec(String sec) {
+        sectionId = sec;
     }
 
     public ArrayList<Assessment> getAssessmentList() {
@@ -65,5 +80,39 @@ public class Registration {
 
     public void setAttendanceList(ArrayList<Attendance> attendanceList) {
         AttendanceList = attendanceList;
+    }
+
+    public void save() {
+        if (dao != null) {
+            Log.d("Data", "Data is Stored");
+            Hashtable<String, String> data = new Hashtable<String, String>();
+            data.put("id", this.id);
+            data.put("sectionId",this.sectionId);
+            data.put("status",this.status);
+            data.put("studId",this.StudId);
+            dao.save(data);
+        }
+    }
+
+    public void load(Hashtable<String, String> data) {
+        this.id = data.get("id");
+        this.status = data.get("status");
+        this.StudId= data.get("studId");
+        this.sectionId = data.get("sectionId");
+    }
+
+    public static ArrayList <Registration> load(IFlexLiteDAO dao,String id) {
+        ArrayList<Registration> notes = new ArrayList<Registration>();
+        if (dao != null) {
+            ArrayList<Hashtable<String, String>> objects = dao.load();
+            for (Hashtable<String, String> obj : objects) {
+                Registration donor = new Registration(dao);
+                donor.load(obj);
+                if(donor.getStud().equals(id)){
+                    notes.add(donor);
+                }
+            }
+        }
+        return  notes;
     }
 }

@@ -2,13 +2,31 @@ package com.example.flexlite.Fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
+import com.example.flexlite.Classes.Course;
+import com.example.flexlite.Classes.Department;
+import com.example.flexlite.Classes.Registration;
+import com.example.flexlite.Classes.Section;
+import com.example.flexlite.Classes.Student;
+import com.example.flexlite.Firebase.FirebaseDAO;
+import com.example.flexlite.Firebase.IFlexLiteDAO;
 import com.example.flexlite.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,7 +34,11 @@ import com.example.flexlite.R;
  * create an instance of this fragment.
  */
 public class drop extends BaseFragment {
-
+    IFlexLiteDAO dao;
+    IFlexLiteDAO dao2;
+    IFlexLiteDAO dao3;
+    IFlexLiteDAO dao4;
+    IFlexLiteDAO dao5;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -63,10 +85,94 @@ public class drop extends BaseFragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_drop, container, false);
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        dao4 = new FirebaseDAO(new FirebaseDAO.DataObserver() {
+            @Override
+            public void update() {
+                ArrayList<Department> deptList = Department.load(dao4);
+                dao5 = new FirebaseDAO(new FirebaseDAO.DataObserver() {
+                    @Override
+                    public void update() {
+                        Student std = Student.load(dao5,user.getUid().toString());
+                        Department dept = findDepartment(std,deptList);
+                        if(!dept.getIsRegOpen().equals("1")){
+                            FragmentTransaction fragmentTransaction = getActivity()
+                                    .getSupportFragmentManager().beginTransaction();
+                            fragmentTransaction.replace(R.id.container, new drop2());
+                            fragmentTransaction.commit();
+                        }
+                    }
+                },"student");
+            }
+        },"department");
+        dao = new FirebaseDAO(new FirebaseDAO.DataObserver() {
+            @Override
+            public void update() {
+                ArrayList<Registration> regList = Registration.load(dao, user.getUid().toString());
+                dao2 = new FirebaseDAO(new FirebaseDAO.DataObserver() {
+                    @Override
+                    public void update() {
+                        ArrayList<Section> sectionList = Section.load(dao2);
+                        dao3 = new FirebaseDAO(new FirebaseDAO.DataObserver() {
+                            @Override
+                            public void update() {
+                                ArrayList<Course> courseList = Course.load(dao3);
+                                TableLayout table = (TableLayout) getView().findViewById(R.id.dropTable);
+                                for (int i = 0; i < regList.size(); i++) {
+                                    for (int j = 0; j < sectionList.size(); j++) {
+                                        for (int k = 0; k < courseList.size(); k++) {
+                                            if (regList.get(i).getSec().equals(sectionList.get(j).getId()) && regList.get(i).getstatus().equals("Registered")) {
+                                                if (sectionList.get(j).getCourseId().equals(courseList.get(k).getId())) {
+                                                    // Inflate your row "template" and fill out the fields.
+                                                    TableRow row = (TableRow) LayoutInflater.from(getContext()).inflate(R.layout.text_button_row, null);
+                                                    ((TextView) row.findViewById(R.id.courseName)).setText(courseList.get(k).getName());
+                                                    TextView btn = (TextView) row.findViewById(R.id.btn);
+                                                    int finalI = i;
+                                                    btn.setOnClickListener(new View.OnClickListener() {
+                                                        @Override
+                                                        public void onClick(View v) {
+                                                            table.removeView(row);
+                                                            //dao4 = new FirebaseDAO("registration");
+                                                            dao.delete(regList.get(finalI).getid());
+                                                            FragmentTransaction fragmentTransaction = getActivity()
+                                                                    .getSupportFragmentManager().beginTransaction();
+                                                            fragmentTransaction.replace(R.id.container, new drop());
+                                                            fragmentTransaction.commit();
+                                                        }
+                                                    });
+                                                    table.addView(row);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                table.requestLayout();
+                            }
+                        }, "course");
+                    }
+                }, "sections");
+            }
+        }, "registration");
+    }
+
     @Override
     public boolean onBackPressed() {
 
         return false;
 
+    }
+    Department findDepartment(Student std,ArrayList<Department> deptList){
+        Department dep=null;
+        for(int i=0;i<deptList.size();i++){
+            if(deptList.get(i).getId().equals(std.getDeptId())){
+                dep=deptList.get(i);
+                break;
+            }
+        }
+        return dep;
     }
 }

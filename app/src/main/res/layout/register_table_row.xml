@@ -26,7 +26,7 @@
         app:cardCornerRadius="5dp">
 
         <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/attendanceSpinner"
+            android:id="@+id/RegisterSpinner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:entries="@array/sections" />

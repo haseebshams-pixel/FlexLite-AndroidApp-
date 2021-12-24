@@ -68,20 +68,23 @@
         <entry key="app/src/main/res/layout/fragment_add_marks.xml" value="0.2679701818084025" />
         <entry key="app/src/main/res/layout/fragment_attendance.xml" value="0.7525771154021526" />
         <entry key="app/src/main/res/layout/fragment_drop.xml" value="0.3770595690747782" />
+        <entry key="app/src/main/res/layout/fragment_drop2.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/fragment_marks.xml" value="0.38890371452324635" />
+        <entry key="app/src/main/res/layout/fragment_marks2.xml" value="0.115861479264643" />
         <entry key="app/src/main/res/layout/fragment_registration.xml" value="0.3355855855855856" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.19628286491387126" />
-        <entry key="app/src/main/res/layout/fragment_student_home.xml" value="0.17583312988281252" />
+        <entry key="app/src/main/res/layout/fragment_student_home.xml" value="0.29151306152343753" />
         <entry key="app/src/main/res/layout/fragment_teacher_home.xml" value="0.1352873815154338" />
         <entry key="app/src/main/res/layout/fragment_withdraw.xml" value="0.23730459342949628" />
         <entry key="app/src/main/res/layout/header.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/menu_header.xml" value="0.29451751708984375" />
         <entry key="app/src/main/res/layout/nav_header_teacher_home.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/register_table_row.xml" value="0.4817813765182186" />
+        <entry key="app/src/main/res/layout/register_table_row.xml" value="0.22689208984375003" />
         <entry key="app/src/main/res/layout/student_menu_header.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/layout/text_button_row.xml" value="0.19628286491387126" />
+        <entry key="app/src/main/res/layout/three_text_row.xml" value="0.11500641299700727" />
         <entry key="app/src/main/res/layout/view_attendance_row.xml" value="0.19628286491387126" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.2543822146216332" />
         <entry key="app/src/main/res/menu/student_menu.xml" value="0.2543822146216332" />

@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".Activities.MyFirebaseApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,33 +17,8 @@
         android:theme="@style/Theme.FlexLite"
         tools:targetApi="31">
         <activity
-            android:name=".Activities.ViewMarksActivity"
-            android:exported="false"
-            android:theme="@style/main" />
-        <activity
-            android:name=".Activities.ViewAttendanceActivity"
-            android:exported="false"
-            android:theme="@style/main" />
-        <activity
-            android:name=".Activities.WithDrawCourseActivity"
-            android:exported="false"
-            android:theme="@style/main" />
-        <activity
-            android:name=".Activities.DropCourseActivity"
-            android:exported="false"
-            android:theme="@style/main" />
-        <activity
-            android:name=".Activities.RegistrationActivity"
-            android:exported="false"
-            android:theme="@style/main" />
-        <activity
-            android:name=".Activities.AddAttendanceActivity"
-            android:exported="false"
-            android:theme="@style/main" />
-        <activity
-            android:name=".Activities.AddMarksActivity"
-            android:exported="false"
-            android:theme="@style/main" />
+            android:name=".Activities.MyFirebaseApp"
+            android:exported="false" />
         <activity
             android:name=".Activities.SplashActivity"
             android:exported="true"

@@ -1,31 +1,39 @@
 package com.example.flexlite.Classes;
 
+import com.example.flexlite.Firebase.IFlexLiteDAO;
+
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class Course {
-    private int id;
+    private String id;
     private String CourseCode;
     private String name;
-    private Department Dep;
-    private int semesterNo;
-    private int CreditHours;
+    private String DepId;
+    private String semesterNo;
+    private String CreditHours;
+    private IFlexLiteDAO dao;
     private ArrayList<Section> SectionList;
 
-    public Course(int id, String courseCode, String name, Department dep, int semesterNo, int creditHours) {
+    public Course(String id, String courseCode, String name, String dep, String semesterNo, String creditHours) {
         this.id = id;
-        CourseCode = courseCode;
+        this.CourseCode = courseCode;
         this.name = name;
-        Dep = dep;
+        this.DepId = dep;
         this.semesterNo = semesterNo;
-        CreditHours = creditHours;
+        this.CreditHours = creditHours;
         this.SectionList = new ArrayList<Section>();
     }
 
-    public int getId() {
+    public Course(IFlexLiteDAO dao) {
+        this.dao = dao;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -45,27 +53,27 @@ public class Course {
         this.name = name;
     }
 
-    public Department getDep() {
-        return Dep;
+    public String getDep() {
+        return DepId;
     }
 
-    public void setDep(Department dep) {
-        Dep = dep;
+    public void setDep(String dep) {
+        DepId = dep;
     }
 
-    public int getSemesterNo() {
+    public String getSemesterNo() {
         return semesterNo;
     }
 
-    public void setSemesterNo(int semesterNo) {
+    public void setSemesterNo(String semesterNo) {
         this.semesterNo = semesterNo;
     }
 
-    public int getCreditHours() {
+    public String getCreditHours() {
         return CreditHours;
     }
 
-    public void setCreditHours(int creditHours) {
+    public void setCreditHours(String creditHours) {
         CreditHours = creditHours;
     }
 
@@ -76,4 +84,43 @@ public class Course {
     public void setSectionList(ArrayList<Section> sectionList) {
         SectionList = sectionList;
     }
+
+    public void load(Hashtable<String, String> data) {
+        this.id = data.get("id");
+        this.CourseCode = data.get("courseCode");
+        this.name = data.get("name");
+        this.DepId = data.get("depId");
+        this.semesterNo = data.get("semesterNo");
+        this.CreditHours = data.get("creditHours");
+    }
+
+    public static ArrayList<Course> load(IFlexLiteDAO dao, String semNo) {
+        ArrayList<Course> notes = new ArrayList<Course>();
+        if (dao != null) {
+            ArrayList<Hashtable<String, String>> objects = dao.load();
+            for (Hashtable<String, String> obj : objects) {
+                Course donor = new Course(dao);
+                donor.load(obj);
+                if (donor.getSemesterNo().equals(semNo)) {
+                    notes.add(donor);
+                }
+            }
+        }
+        return notes;
+    }
+
+    public static ArrayList<Course> load(IFlexLiteDAO dao) {
+        ArrayList<Course> notes = new ArrayList<Course>();
+        if (dao != null) {
+            ArrayList<Hashtable<String, String>> objects = dao.load();
+            for (Hashtable<String, String> obj : objects) {
+                Course donor = new Course(dao);
+                donor.load(obj);
+                notes.add(donor);
+
+            }
+        }
+        return notes;
+    }
+
 }

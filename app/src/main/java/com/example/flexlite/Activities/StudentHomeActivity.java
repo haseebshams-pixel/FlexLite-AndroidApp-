@@ -14,6 +14,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.flexlite.Classes.Student;
+import com.example.flexlite.Firebase.FirebaseDAO;
+import com.example.flexlite.Firebase.IFlexLiteDAO;
 import com.example.flexlite.Fragments.BaseFragment;
 import com.example.flexlite.Fragments.attendance;
 import com.example.flexlite.Fragments.drop;
@@ -26,6 +29,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -36,26 +40,36 @@ public class StudentHomeActivity extends AppCompatActivity implements Navigation
     ImageView menuIcon;
     Fragment temp;
     TextView toolbarTitle;
+    IFlexLiteDAO dao;
+    Student std = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_home);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+
 
         drawerLayout = (DrawerLayout) findViewById(R.id.stud_drawer);
         navigationView = (NavigationView) findViewById(R.id.stud_nav);
         menuIcon = (ImageView) findViewById(R.id.stud_menu_icon);
         toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = (TextView) headerView.findViewById(R.id.header_user_name);
         TextView navEmail = (TextView) headerView.findViewById(R.id.header_email);
-        navUsername.setText("Haseeb Shams");
-        navEmail.setText("hadishams38.hs@gmail.com");
+        dao = new FirebaseDAO(new FirebaseDAO.DataObserver() {
+            @Override
+            public void update() {
+                std = Student.load(dao,user.getUid().toString());
+                navUsername.setText(std.getName());
+                navEmail.setText(std.getEmail());
+            }
+        },"student");
 
         navigationDrawer();
-        Log.d("UID", user.getUid());
+
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new student_home()).commit();
         toolbarTitle.setText("HOME");
 
@@ -116,31 +130,37 @@ public class StudentHomeActivity extends AppCompatActivity implements Navigation
                 toolbarTitle.setText("HOME");
                 drawerLayout.closeDrawers();
                 temp = new student_home();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, temp).commit();
                 break;
             case R.id.nav_reg:
                 toolbarTitle.setText("REGISTRATION");
                 drawerLayout.closeDrawers();
                 temp = new registration();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, temp).commit();
                 break;
             case R.id.nav_drop:
                 toolbarTitle.setText("DROP");
                 drawerLayout.closeDrawers();
                 temp= new drop();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, temp).commit();
                 break;
             case R.id.nav_withdraw:
                 toolbarTitle.setText("WITHDRAW");
                 drawerLayout.closeDrawers();
                 temp = new withdraw();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, temp).commit();
                 break;
             case R.id.nav_attendance:
                 toolbarTitle.setText("ATTENDANCE");
                 drawerLayout.closeDrawers();
                 temp= new attendance();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, temp).commit();
                 break;
             case R.id.nav_marks:
                 toolbarTitle.setText("MARKS");
                 drawerLayout.closeDrawers();
                 temp = new marks();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, temp).commit();
                 break;
             case R.id.nav_logout:
                 drawerLayout.closeDrawers();
@@ -149,7 +169,7 @@ public class StudentHomeActivity extends AppCompatActivity implements Navigation
                 startActivity(intent6);
                 break;
         }
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, temp).commit();
+
         return true;
     }
 }
