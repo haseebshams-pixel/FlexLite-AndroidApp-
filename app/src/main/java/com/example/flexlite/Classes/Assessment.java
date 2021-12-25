@@ -36,6 +36,7 @@ public class Assessment {
 
     public Assessment(IFlexLiteDAO dao) {
         this.dao = dao;
+        this.id = UUID.randomUUID().toString();
     }
 
     public IFlexLiteDAO getDao() {

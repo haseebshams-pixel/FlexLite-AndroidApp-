@@ -194,22 +194,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/view6" />
 
             <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginBottom="30dp"
-                android:fontFamily="@font/poppins_medium"
-                android:gravity="center_vertical"
-                android:text="Batch:"
-                android:textColor="@color/black"
-                app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toBottomOf="@+id/view5"
-                app:layout_constraintStart_toEndOf="@+id/textView14"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-            <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -226,7 +210,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/degree"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="10dp"
@@ -239,11 +223,11 @@
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="@+id/view5"
                 app:layout_constraintStart_toEndOf="@+id/textView11"
-                app:layout_constraintTop_toBottomOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/salary"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/salary"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="15dp"
@@ -258,22 +242,6 @@
                 app:layout_constraintStart_toEndOf="@+id/textView10"
                 app:layout_constraintTop_toBottomOf="@+id/view6"
                 app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginBottom="30dp"
-                android:capitalize="words"
-                android:fontFamily="@font/poppins_light"
-                android:gravity="center_vertical"
-                android:text="2018"
-                app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toBottomOf="@+id/view5"
-                app:layout_constraintStart_toEndOf="@+id/textView13"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
             <TextView
                 android:id="@+id/textView18"
@@ -320,8 +288,8 @@
                 android:textColor="@color/black"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="@+id/view7"
-                app:layout_constraintStart_toEndOf="@+id/textView28"
-                app:layout_constraintTop_toBottomOf="@+id/textView27"
+                app:layout_constraintStart_toEndOf="@+id/dob"
+                app:layout_constraintTop_toBottomOf="@+id/cnic"
                 app:layout_constraintVertical_bias="1.0" />
 
             <TextView
@@ -389,7 +357,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
             <TextView
-                android:id="@+id/textView26"
+                android:id="@+id/tch_name"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
@@ -404,7 +372,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view8" />
 
             <TextView
-                android:id="@+id/textView27"
+                android:id="@+id/cnic"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
@@ -416,10 +384,10 @@
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="@+id/view7"
                 app:layout_constraintStart_toEndOf="@+id/textView19"
-                app:layout_constraintTop_toBottomOf="@+id/textView26" />
+                app:layout_constraintTop_toBottomOf="@+id/tch_name" />
 
             <TextView
-                android:id="@+id/textView28"
+                android:id="@+id/dob"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
@@ -431,10 +399,10 @@
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="@+id/view7"
                 app:layout_constraintStart_toEndOf="@+id/textView20"
-                app:layout_constraintTop_toBottomOf="@+id/textView27" />
+                app:layout_constraintTop_toBottomOf="@+id/cnic" />
 
             <TextView
-                android:id="@+id/textView37"
+                android:id="@+id/gender"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -448,18 +416,18 @@
                 app:layout_constraintBottom_toBottomOf="@+id/view7"
                 app:layout_constraintEnd_toEndOf="@+id/view7"
                 app:layout_constraintStart_toEndOf="@+id/textView36"
-                app:layout_constraintTop_toBottomOf="@+id/textView27" />
+                app:layout_constraintTop_toBottomOf="@+id/cnic" />
 
             <TextView
-                android:id="@+id/textView29"
+                android:id="@+id/email"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="17dp"
                 android:layout_marginBottom="110dp"
                 android:fontFamily="@font/poppins_light"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="hadishams38.hs@gmail.com"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="@+id/view9"
@@ -468,24 +436,26 @@
                 app:layout_constraintTop_toBottomOf="@+id/view10" />
 
             <TextView
-                android:id="@+id/textView30"
+                android:id="@+id/phoneno"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="80dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginBottom="50dp"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center_vertical"
                 android:text="0331 0062753"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="@+id/view9"
                 app:layout_constraintEnd_toEndOf="@+id/view9"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/textView24"
-                app:layout_constraintTop_toBottomOf="@+id/textView29" />
+                app:layout_constraintTop_toBottomOf="@+id/email"
+                app:layout_constraintVertical_bias="0.428" />
 
             <TextView
-                android:id="@+id/textView31"
+                android:id="@+id/address"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
@@ -498,7 +468,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/view9"
                 app:layout_constraintEnd_toEndOf="@+id/view9"
                 app:layout_constraintStart_toEndOf="@+id/textView25"
-                app:layout_constraintTop_toBottomOf="@+id/textView30" />
+                app:layout_constraintTop_toBottomOf="@+id/phoneno" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

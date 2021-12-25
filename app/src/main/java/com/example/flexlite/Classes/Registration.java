@@ -31,7 +31,7 @@ public class Registration {
     }
 
     public Registration(IFlexLiteDAO dao) {
-       this.dao = dao;
+        this.dao = dao;
     }
 
     public String getid() {
@@ -87,9 +87,9 @@ public class Registration {
             Log.d("Data", "Data is Stored");
             Hashtable<String, String> data = new Hashtable<String, String>();
             data.put("id", this.id);
-            data.put("sectionId",this.sectionId);
-            data.put("status",this.status);
-            data.put("studId",this.StudId);
+            data.put("sectionId", this.sectionId);
+            data.put("status", this.status);
+            data.put("studId", this.StudId);
             dao.save(data);
         }
     }
@@ -97,22 +97,35 @@ public class Registration {
     public void load(Hashtable<String, String> data) {
         this.id = data.get("id");
         this.status = data.get("status");
-        this.StudId= data.get("studId");
+        this.StudId = data.get("studId");
         this.sectionId = data.get("sectionId");
     }
 
-    public static ArrayList <Registration> load(IFlexLiteDAO dao,String id) {
+    public static ArrayList<Registration> load(IFlexLiteDAO dao, String id) {
         ArrayList<Registration> notes = new ArrayList<Registration>();
         if (dao != null) {
             ArrayList<Hashtable<String, String>> objects = dao.load();
             for (Hashtable<String, String> obj : objects) {
                 Registration donor = new Registration(dao);
                 donor.load(obj);
-                if(donor.getStud().equals(id)){
+                if (donor.getStud().equals(id)) {
                     notes.add(donor);
                 }
             }
         }
-        return  notes;
+        return notes;
+    }
+
+    public static ArrayList<Registration> load(IFlexLiteDAO dao) {
+        ArrayList<Registration> notes = new ArrayList<Registration>();
+        if (dao != null) {
+            ArrayList<Hashtable<String, String>> objects = dao.load();
+            for (Hashtable<String, String> obj : objects) {
+                Registration donor = new Registration(dao);
+                donor.load(obj);
+                notes.add(donor);
+            }
+        }
+        return notes;
     }
 }

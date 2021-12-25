@@ -26,6 +26,7 @@ public class Attendance {
 
     public Attendance(IFlexLiteDAO dao){
         this.dao = dao;
+        this.id=UUID.randomUUID().toString();
     }
 
     public IFlexLiteDAO getDao() {

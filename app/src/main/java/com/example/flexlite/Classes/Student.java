@@ -183,5 +183,17 @@ public class Student {
         }
         return null;
     }
+    public static ArrayList <Student> load(IFlexLiteDAO dao) {
+        ArrayList<Student> notes = new ArrayList<Student>();
+        if (dao != null) {
+            ArrayList<Hashtable<String, String>> objects = dao.load();
+            for (Hashtable<String, String> obj : objects) {
+                Student donor = new Student(dao);
+                donor.load(obj);
+                notes.add(donor);
+            }
+        }
+        return notes;
+    }
 
 }

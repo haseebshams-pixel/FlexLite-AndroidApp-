@@ -26,12 +26,13 @@
                 android:layout_marginBottom="8dp"
                 android:backgroundTint="@color/appBlue"
                 app:cardCornerRadius="5dp"
-                app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal"
+                app:layout_constraintBottom_toTopOf="@+id/totalmarks"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView22"
                 app:layout_constraintTop_toBottomOf="@+id/view3">
 
                 <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/assessmentList"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:entries="@array/assessmentType" />
@@ -162,13 +163,14 @@
                 app:layout_constraintTop_toTopOf="@+id/guideline121">
 
                 <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/sectionList"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:entries="@array/assessmentType" />
             </androidx.cardview.widget.CardView>
 
             <EditText
-                android:id="@+id/editTextNumberDecimal"
+                android:id="@+id/totalmarks"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="74dp"
@@ -181,13 +183,13 @@
                 android:hint="total marks*"
                 android:inputType="numberDecimal"
                 android:padding="4sp"
-                app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal2"
+                app:layout_constraintBottom_toTopOf="@+id/weightage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView32"
                 app:layout_constraintTop_toBottomOf="@+id/view3" />
 
             <EditText
-                android:id="@+id/editTextNumberDecimal2"
+                android:id="@+id/weightage"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="74dp"
@@ -245,7 +247,7 @@
             </TableLayout>
 
             <View
-                android:id="@+id/view4"
+                android:id="@+id/saveBtn"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="56dp"
@@ -268,11 +270,11 @@
                 android:text="Save"
                 android:textColor="@color/white"
                 app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toBottomOf="@+id/view4"
+                app:layout_constraintBottom_toBottomOf="@+id/saveBtn"
                 app:layout_constraintEnd_toStartOf="@+id/guideline122"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/view4"
-                app:layout_constraintTop_toTopOf="@+id/view4" />
+                app:layout_constraintStart_toStartOf="@+id/saveBtn"
+                app:layout_constraintTop_toTopOf="@+id/saveBtn" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -199,7 +199,7 @@
         android:ems="10"
         android:fontFamily="@font/poppins"
         android:gravity="center_vertical"
-        android:hint="username*"
+        android:hint="email*"
         android:inputType="textPersonName"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
@@ -247,6 +247,7 @@
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/custom_input"

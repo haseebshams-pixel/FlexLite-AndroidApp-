@@ -2,13 +2,22 @@ package com.example.flexlite.Fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.flexlite.Classes.Student;
+import com.example.flexlite.Classes.Teacher;
+import com.example.flexlite.Firebase.FirebaseDAO;
+import com.example.flexlite.Firebase.IFlexLiteDAO;
 import com.example.flexlite.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +26,7 @@ import com.example.flexlite.R;
  */
 public class teacher_home extends BaseFragment {
 
+    IFlexLiteDAO dao;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -63,6 +73,37 @@ public class teacher_home extends BaseFragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_teacher_home, container, false);
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        TextView degree = (TextView) getView().findViewById(R.id.degree);
+        TextView tch_name = (TextView) getView().findViewById(R.id.tch_name);
+        TextView cnic = (TextView) getView().findViewById(R.id.cnic);
+        TextView dob = (TextView) getView().findViewById(R.id.dob);
+        TextView gender = (TextView) getView().findViewById(R.id.gender);
+        TextView email = (TextView) getView().findViewById(R.id.email);
+        TextView phoneno = (TextView) getView().findViewById(R.id.phoneno);
+        TextView address = (TextView) getView().findViewById(R.id.address);
+        TextView salary = (TextView) getView().findViewById(R.id.salary);
+        dao = new FirebaseDAO(new FirebaseDAO.DataObserver() {
+            @Override
+            public void update() {
+                Teacher tch = Teacher.load(dao,user.getUid().toString());
+                salary.setText(tch.getSalary());
+                degree.setText(tch.getDegree());
+                tch_name.setText(tch.getName());
+                cnic.setText(tch.getCNIC());
+                dob.setText(tch.getDOB());
+                gender.setText(tch.getGender());
+                email.setText(tch.getEmail());
+                phoneno.setText(tch.getMobileno());
+                address.setText(tch.getAddress());
+            }
+        },"teacher");
+    }
+
     @Override
     public boolean onBackPressed() {
 

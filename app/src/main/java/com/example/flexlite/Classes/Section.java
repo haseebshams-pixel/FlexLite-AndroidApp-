@@ -98,7 +98,20 @@ public class Section {
         }
         return  notes;
     }
-
+    public static ArrayList<Section> load(IFlexLiteDAO dao, String id,int type) {
+        ArrayList<Section> notes = new ArrayList<Section>();
+        if (dao != null) {
+            ArrayList<Hashtable<String, String>> objects = dao.load();
+            for (Hashtable<String, String> obj : objects) {
+                Section donor = new Section(dao);
+                donor.load(obj);
+                if(donor.getTeacher().equals(id)){
+                    notes.add(donor);
+                }
+            }
+        }
+        return  notes;
+    }
     public static Section load(IFlexLiteDAO dao, String id,String secName) {
         ArrayList<Section> notes = new ArrayList<Section>();
         if (dao != null) {

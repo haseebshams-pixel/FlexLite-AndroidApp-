@@ -105,23 +105,20 @@
                 android:layout_marginBottom="8dp"
                 android:backgroundTint="@color/appBlue"
                 app:cardCornerRadius="5dp"
-                app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal"
+                app:layout_constraintBottom_toTopOf="@+id/lectureNo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView21"
                 app:layout_constraintTop_toTopOf="@+id/guideline121">
 
                 <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/registeredSectionList"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:entries="@array/assessmentType" />
             </androidx.cardview.widget.CardView>
 
             <EditText
-                android:id="@+id/editTextNumberDecimal"
-                app:layout_constraintBottom_toTopOf="@+id/date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView32"
-                app:layout_constraintTop_toBottomOf="@+id/view3"
+                android:id="@+id/lectureNo"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="74dp"
@@ -133,7 +130,13 @@
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:hint="lecture*"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                app:layout_constraintBottom_toTopOf="@+id/date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView32"
+                app:layout_constraintTop_toBottomOf="@+id/view3" />
 
             <EditText
                 android:id="@+id/date"
@@ -196,36 +199,6 @@
 
                 </TableRow>
             </TableLayout>
-
-            <View
-                android:id="@+id/view4"
-                app:layout_constraintEnd_toStartOf="@+id/guideline59"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guideline60"
-                app:layout_constraintTop_toBottomOf="@+id/addAttendacneTable"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="56dp"
-                android:background="@drawable/custom_button" />
-
-            <TextView
-                android:id="@+id/textView38"
-                app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toBottomOf="@+id/view4"
-                app:layout_constraintEnd_toStartOf="@+id/guideline59"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/view4"
-                app:layout_constraintTop_toTopOf="@+id/view4"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="19dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="19dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/poppins"
-                android:gravity="center"
-                android:text="Save"
-                android:textColor="@color/white" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
