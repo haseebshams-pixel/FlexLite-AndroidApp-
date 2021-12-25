@@ -234,7 +234,7 @@ public class addMarks extends BaseFragment {
     ArrayList<Registration> findRegistrations(ArrayList<Registration> regList, String secId) {
         ArrayList<Registration> registeredList = new ArrayList<Registration>();
         for (int i = 0; i < regList.size(); i++) {
-            if (regList.get(i).getSec().equals(secId)) {
+            if (regList.get(i).getSec().equals(secId) && regList.get(i).getstatus().equals("Registered")) {
                 registeredList.add(regList.get(i));
             }
         }
@@ -256,7 +256,7 @@ public class addMarks extends BaseFragment {
     Student findStudent(Registration reg, ArrayList<Student> studList) {
         Student regStudent = null;
         for (int j = 0; j < studList.size(); j++) {
-            if (reg.getStud().equals(studList.get(j).getId())) {
+            if (reg.getStud().equals(studList.get(j).getId()) ) {
                 regStudent = studList.get(j);
             }
         }

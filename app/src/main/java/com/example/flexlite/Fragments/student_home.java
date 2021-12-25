@@ -16,6 +16,9 @@ import com.example.flexlite.Classes.Student;
 import com.example.flexlite.Firebase.FirebaseDAO;
 import com.example.flexlite.Firebase.IFlexLiteDAO;
 import com.example.flexlite.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -33,6 +36,7 @@ public class student_home extends BaseFragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     IFlexLiteDAO dao;
+    AdView mAdView;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -79,6 +83,10 @@ public class student_home extends BaseFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        mAdView = getView().findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         TextView rollno = (TextView) getView().findViewById(R.id.rollno);
         TextView batch = (TextView) getView().findViewById(R.id.batchno);

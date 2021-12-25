@@ -16,6 +16,8 @@ import com.example.flexlite.Classes.Teacher;
 import com.example.flexlite.Firebase.FirebaseDAO;
 import com.example.flexlite.Firebase.IFlexLiteDAO;
 import com.example.flexlite.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -27,6 +29,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class teacher_home extends BaseFragment {
 
     IFlexLiteDAO dao;
+    AdView mAdView;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -77,6 +80,9 @@ public class teacher_home extends BaseFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        mAdView = getView().findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         TextView degree = (TextView) getView().findViewById(R.id.degree);
         TextView tch_name = (TextView) getView().findViewById(R.id.tch_name);

@@ -244,7 +244,7 @@ public class addAttendance extends BaseFragment {
     ArrayList<Registration> findRegistrations(ArrayList<Registration> regList, String secId) {
         ArrayList<Registration> registeredList = new ArrayList<Registration>();
         for (int i = 0; i < regList.size(); i++) {
-            if (regList.get(i).getSec().equals(secId)) {
+            if (regList.get(i).getSec().equals(secId)&& regList.get(i).getstatus().equals("Registered")) {
                 registeredList.add(regList.get(i));
             }
         }
